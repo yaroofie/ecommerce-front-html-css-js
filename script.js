@@ -106,7 +106,6 @@ for ( let x = 0; x < stocks.length; x++ )
     available = stocks[x].querySelector(".qty-available").innerHTML,
     sold = stocks[x].querySelector(".qty-sold").innerHTML,
     percent = ( sold * 100 ) / stock;
-  console.log(percent);
   stocks[ x ].querySelector( ".available" ).style.width = percent + "%";
 }
 
