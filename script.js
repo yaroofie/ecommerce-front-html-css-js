@@ -31,6 +31,7 @@ closeButton.addEventListener("click", function () {
 });
 overlay.addEventListener("click", function () {
   addClass.classList.remove("showmenu");
+  addClass.classList.remove("showmodal");
 });
 
 // show sub menu on mobile
@@ -122,4 +123,14 @@ document.addEventListener("click", function (e) {
   const isClosest = e.target.closest(".mini-cart");
   if (!isClosest && cartPopup.classList.contains("show"))
     cartPopup.classList.remove("show");
+} );
+
+// show modal on load 
+window.onload = function ()
+{
+  document.querySelector( '.site' ).classList.toggle( "showmodal" );
+};
+document.querySelector( ".modalclose" ).addEventListener( "click", function ()
+{
+  document.querySelector(".site").classList.remove("showmodal");
 });
