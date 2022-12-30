@@ -109,3 +109,18 @@ for ( let x = 0; x < stocks.length; x++ )
   console.log(percent);
   stocks[ x ].querySelector( ".available" ).style.width = percent + "%";
 }
+
+// show cart on click
+const cartPopup = document.querySelector(".mini-cart")
+const cartTrigger = document.querySelector( ".cart-trigger" );
+cartTrigger.addEventListener( "click", () =>
+{
+  setTimeout(() => {
+    if(!cartPopup.classList.contains("show")) cartPopup.classList.add("show")
+  }, 250);
+})
+document.addEventListener("click", function (e) {
+  const isClosest = e.target.closest(".mini-cart");
+  if (!isClosest && cartPopup.classList.contains("show"))
+    cartPopup.classList.remove("show");
+});
